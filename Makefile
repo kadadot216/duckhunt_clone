@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2018
 ## Makefile
 ## File description:
-## Makefile for workshop
+## Makefile for myhunter
 ##
 
 CC	=	gcc -W -Wall -Wextra
@@ -21,7 +21,8 @@ NAME	=	window
 
 GDBNAME	=	gdb
 
-SRC	=	src/window.c
+SRC	=	src/window.c		\
+		src/duck.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -12,15 +12,12 @@
 #include "my.h"
 
 typedef struct	s_window {
-	unsigned int	height;
-	unsigned int	width;
-	unsigned int	colordepth;
 	char		*title;
+	sfVideoMode	mode;
 	sfRenderWindow	*renderwindow;
 	sfEvent		event;
 }		t_window;
 
-void		init_window(t_window *win);
 int		destroy_window(t_window *win);
 t_window	*create_window(unsigned int height, unsigned int width,
 			unsigned int colordepth, char *title);

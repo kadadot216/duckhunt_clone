@@ -8,25 +8,20 @@
 #include "window.h"
 
 t_window	*create_window(unsigned int width, unsigned int height,
-			unsigned int colordepth, char *title)
+			unsigned int depth, char *title)
 {
 	t_window	*new;
 	new = malloc(sizeof(t_window));
 
-	new->width = width;
-	new->height = height;
-	new->colordepth = colordepth;
 	new->title = my_strdup(title);
-	init_window(new);
+	new->mode.width = width;
+	new->mode.height = height;
+	new->mode.bitsPerPixel = depth;
+	new->renderwindow = sfRenderWindow_create(new->mode, new->title, sfResize | 
+			sfClose, NULL);
 	return (new);
 }
 
-void		init_window(t_window *win)
-{
-	sfVideoMode	mode = {win->width, win->height, win->colordepth};
-	win->renderwindow = sfRenderWindow_create(mode, win->title, sfResize | 
-			sfClose, NULL);
-}
 
 int		destroy_window(t_window *win)
 {
