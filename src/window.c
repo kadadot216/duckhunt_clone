@@ -17,13 +17,13 @@ t_window	*create_window(unsigned int width, unsigned int height,
 	new->height = height;
 	new->colordepth = colordepth;
 	new->title = my_strdup(title);
+	init_window(new);
 	return (new);
 }
 
 void		init_window(t_window *win)
 {
 	sfVideoMode	mode = {win->width, win->height, win->colordepth};
-
 	win->renderwindow = sfRenderWindow_create(mode, win->title, sfResize | 
 			sfClose, NULL);
 }

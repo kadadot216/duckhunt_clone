@@ -5,7 +5,10 @@
 ## Makefile for mylib
 ##
 
-SRC	=	str/my_strdup.c
+SRC	=	str/my_strdup.c		\
+		put/my_putchar.c	\
+		put/my_putstr.c		\
+		put/my_put_nbr.c
 
 OBJ	=	$(SRC:.c=.o)
 
