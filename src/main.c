@@ -51,8 +51,7 @@ int	main(void)
 	while (sfRenderWindow_isOpen(window->renderwindow)) {
 		sfRenderWindow_clear(window->renderwindow, sfBlack);
 		analyse_events(window->renderwindow, window->event);
-		sfSprite_setTextureRect(duck->sprite, duck->hitbox);
-		sfRenderWindow_drawSprite(window->renderwindow, duck->sprite, NULL);
+		render_the_duck(duck, window->renderwindow);
 		sfRenderWindow_display(window->renderwindow);
 	}
 	kill_duck(duck);
