@@ -26,6 +26,8 @@ t_duck	*new_duck(void)
 
 void	kill_duck(t_duck *duck)
 {
+	sfTexture_destroy(duck->texture);
+	sfSprite_destroy(duck->sprite);
 	unset_timer(duck->timer);
 	free(duck);
 }

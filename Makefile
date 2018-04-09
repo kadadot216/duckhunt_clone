@@ -23,7 +23,8 @@ GDBNAME	=	gdb
 
 SRC	=	src/window.c		\
 		src/timer.c		\
-		src/duck.c
+		src/duck.c		\
+		src/game.c
 
 OBJ	=	$(SRC:.c=.o)
 

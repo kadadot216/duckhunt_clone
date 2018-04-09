@@ -19,6 +19,7 @@ t_window	*create_window(unsigned int width, unsigned int height,
 	new->mode.bitsPerPixel = depth;
 	new->renderwindow = sfRenderWindow_create(new->mode, new->title,
 			sfResize | sfClose, NULL);
+	sfRenderWindow_setFramerateLimit(new->renderwindow, 60);
 	return (new);
 }
 
