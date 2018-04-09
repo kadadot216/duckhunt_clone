@@ -1,0 +1,40 @@
+##
+## EPITECH PROJECT, 2018
+## Makefile
+## File description:
+## Makefile for mylib
+##
+
+SRC	=	str/my_strdup.c
+
+OBJ	=	$(SRC:.c=.o)
+
+HDNAME	=	my.h
+
+LIBNAME	=	libmy.a
+
+HDDIR	=	../../include
+
+LIBDIR	=	..
+
+CFLAGS	+=	-I.
+
+
+all:	.a .h
+
+
+.a:	$(OBJ)
+	ar rc $(LIBNAME) $^
+	cp $(LIBNAME) $(LIBDIR)
+
+.h:
+	cp $(HDNAME) $(HDDIR)
+
+clean:
+	rm -f $(OBJ)
+	rm -f $(LIBNAME)
+
+fclean:	clean
+	rm -f $(HDDIR)/$(HDNAME)
+	rm -f $(LIBDIR)/$(LIBNAME)
+
