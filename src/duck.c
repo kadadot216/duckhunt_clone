@@ -19,12 +19,14 @@ t_duck	*new_duck(void)
 	duck->hitbox.height = DUCK_HEIGHT;
 	duck->texture = sfTexture_createFromFile(PICPATH, NULL);
 	duck->sprite = sfSprite_create();
+	duck->timer = init_timer();
 	sfSprite_setTexture(duck->sprite, duck->texture, sfFalse);
 	return (duck);
 }
 
 void	kill_duck(t_duck *duck)
 {
+	unset_timer(duck->timer);
 	free(duck);
 }
 
@@ -36,12 +38,12 @@ void	move_rect(sfIntRect *rect, int offset, int max_value)
 
 }
 
-void	render_the_duck(t_duck *duck, sfRenderWindow *window, t_timer *timer)
+void	anim_duck(t_duck *duck, sfRenderWindow *window)
 {
-	get_elapsed_time(timer);
-	if (timer->seconds > FRAME_DURATION) {
+	get_elapsed_time(duck->timer);
+	if (duck->timer->seconds > FRAME_DURATION) {
 			move_rect(&duck->hitbox, DUCK_WIDTH, SPRITE_LENGTH);
-			sfClock_restart(timer->clock);
+			sfClock_restart(duck->timer->clock);
 	}
 	sfSprite_setTextureRect(duck->sprite, duck->hitbox);
 	sfRenderWindow_drawSprite(window, duck->sprite, NULL);
