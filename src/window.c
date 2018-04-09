@@ -17,11 +17,10 @@ t_window	*create_window(unsigned int width, unsigned int height,
 	new->mode.width = width;
 	new->mode.height = height;
 	new->mode.bitsPerPixel = depth;
-	new->renderwindow = sfRenderWindow_create(new->mode, new->title, sfResize | 
-			sfClose, NULL);
+	new->renderwindow = sfRenderWindow_create(new->mode, new->title,
+			sfResize | sfClose, NULL);
 	return (new);
 }
-
 
 int		destroy_window(t_window *win)
 {

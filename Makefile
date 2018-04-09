@@ -22,6 +22,7 @@ NAME	=	window
 GDBNAME	=	gdb
 
 SRC	=	src/window.c		\
+		src/timer.c		\
 		src/duck.c
 
 OBJ	=	$(SRC:.c=.o)

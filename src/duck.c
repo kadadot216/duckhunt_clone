@@ -6,6 +6,7 @@
 */
 
 #include "duck.h"
+#include "timer.h"
 
 t_duck	*new_duck(void)
 {
@@ -30,13 +31,19 @@ void	kill_duck(t_duck *duck)
 void	move_rect(sfIntRect *rect, int offset, int max_value)
 {
 	rect->left += offset;
-	if (rect->left > max_value)
+	if (rect->left >= max_value)
 		rect->left = 0;
+
 }
 
-void	render_the_duck(t_duck *duck, sfRenderWindow *window)
+void	render_the_duck(t_duck *duck, sfRenderWindow *window, t_timer *timer)
 {
-	move_rect(&duck->hitbox, DUCK_WIDTH, (DUCK_WIDTH * DUCK_FRAMES));
+	get_elapsed_time(timer);
+	if (timer->seconds > FRAME_DURATION) {
+			move_rect(&duck->hitbox, DUCK_WIDTH, SPRITE_LENGTH);
+			sfClock_restart(timer->clock);
+	}
 	sfSprite_setTextureRect(duck->sprite, duck->hitbox);
 	sfRenderWindow_drawSprite(window, duck->sprite, NULL);
 }
+

@@ -37,21 +37,22 @@ void	analyse_events(sfRenderWindow *window, sfEvent event)
 	}
 }
 
-
 int	main(void)
 {
 	t_window	*window;
 	t_duck		*duck;
+	t_timer		*timer;
 
 	window = create_window(800, 600, 32, "My window");
 	sfRenderWindow_setFramerateLimit(window->renderwindow, 60);
 	if (!window)
 		return (84);
+	timer = init_timer();
 	duck = new_duck();
 	while (sfRenderWindow_isOpen(window->renderwindow)) {
 		sfRenderWindow_clear(window->renderwindow, sfBlack);
 		analyse_events(window->renderwindow, window->event);
-		render_the_duck(duck, window->renderwindow);
+		render_the_duck(duck, window->renderwindow, timer);
 		sfRenderWindow_display(window->renderwindow);
 	}
 	kill_duck(duck);

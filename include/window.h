@@ -11,12 +11,14 @@
 #include <SFML/Graphics.h>
 #include "my.h"
 
-typedef struct	s_window {
+struct	s_window {
 	char		*title;
 	sfVideoMode	mode;
 	sfRenderWindow	*renderwindow;
 	sfEvent		event;
-}		t_window;
+};
+
+typedef struct	s_window t_window;
 
 int		destroy_window(t_window *win);
 t_window	*create_window(unsigned int height, unsigned int width,
