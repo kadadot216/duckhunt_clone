@@ -15,14 +15,13 @@
 //#define	DUCK_HEIGHT (95)
 //#define	DUCK_WIDTH (60)
 //#define	DUCK_FRAMES (12)
-#define	DUCK_HEIGHT (100)
-#define	DUCK_WIDTH (135)
-#define	DUCK_FRAMES (10)
+#define	DUCK_HEIGHT (110)
+#define	DUCK_WIDTH (110)
+#define	DUCK_FRAMES (3)
 #define SPRITE_LENGTH (DUCK_WIDTH * DUCK_FRAMES)
-//#define	FRAME_DURATION (0.05)
-#define	FRAME_DURATION (0.005)
+#define	FRAME_DURATION (0.25)
 
-#define PICPATH "assets/rareparrot.png"
+#define PICPATH "assets/spritesheet.png"
 
 struct s_duck {
 	sfSprite	*sprite;
