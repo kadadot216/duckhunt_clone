@@ -8,35 +8,8 @@
 #include "window.h"
 #include "duck.h"
 #include "game.h"
+#include "gamewindow.h"
 #include <SFML/Graphics.h>
-
-void	manage_mouse_click(sfMouseButtonEvent event)
-{
-	if (event.button == sfMouseRight)
-		my_putstr("XD\n");
-	else if (event.button == sfMouseLeft) {
-		my_putstr("Mouse x=");
-		my_put_nbr(event.x);
-		my_putstr(" y=");
-		my_put_nbr(event.y);
-		my_putstr("\n");
-	}
-}
-
-void	close_window(sfRenderWindow *window)
-{
-	sfRenderWindow_close(window);
-}
-
-void	analyse_events(sfRenderWindow *window, sfEvent event)
-{
-	while (sfRenderWindow_pollEvent(window, &event)) {
-		if (event.type == sfEvtClosed)
-			close_window(window);
-		else if (event.type == sfEvtMouseButtonPressed)
-			manage_mouse_click(event.mouseButton);
-	}
-}
 
 int	main(void)
 {
@@ -54,6 +27,7 @@ int	main(void)
 		analyse_events(window->renderwindow, window->event);
 		sfRenderWindow_drawSprite(window->renderwindow, bg->sprite, NULL);
 		anim_duck(duck, window->renderwindow);
+		move_duck(duck, window);
 		sfRenderWindow_display(window->renderwindow);
 	}
 	kill_duck(duck);

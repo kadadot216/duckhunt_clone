@@ -7,6 +7,7 @@
 
 #include "duck.h"
 #include "timer.h"
+#include "my.h"
 
 t_duck	*new_duck(void)
 {
@@ -20,8 +21,19 @@ t_duck	*new_duck(void)
 	duck->texture = sfTexture_createFromFile(PICPATH, NULL);
 	duck->sprite = sfSprite_create();
 	duck->timer = init_timer();
+	duck->speed.x = 5.0;
+	duck->speed.y = 0.0;
 	sfSprite_setTexture(duck->sprite, duck->texture, sfFalse);
 	return (duck);
+}
+
+sfVector2f	get_sp_position(sfSprite *sprite)
+{
+	sfVector2f	position;
+
+	position = sfSprite_getPosition(sprite);
+
+	return (position);
 }
 
 void	kill_duck(t_duck *duck)
