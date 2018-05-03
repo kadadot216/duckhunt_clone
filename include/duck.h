@@ -23,21 +23,21 @@
 
 #define PICPATH "assets/spritesheet.png"
 
-struct s_duck {
+struct duck_s {
 	sfSprite	*sprite;
 	sfTexture	*texture;	
 	sfIntRect	hitbox;
 	sfVector2f	position;
 	sfVector2f	speed;
-	t_timer		*timer;
+	gametimer_t	*timer;
 };
 
-typedef struct s_duck	t_duck;
+typedef struct duck_s	duck_t;
 
-void	kill_duck(t_duck *duck);
-void	move_rect(sfIntRect *rect, int offset, int max_value);
-void	anim_duck(t_duck *duck, sfRenderWindow *window);
-t_duck	*new_duck(void);
+void		remove_duck(duck_t *duck);
+void		move_rect(sfIntRect *rect, int offset, int max_value);
+void		anim_duck(duck_t *duck, sfRenderWindow *window);
+duck_t		*new_duck(void);
 sfVector2f	get_sp_position(sfSprite *sprite);
 
 #endif

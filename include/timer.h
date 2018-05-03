@@ -11,16 +11,14 @@
 #include "my.h"
 #include "SFML/Graphics.h"
 
-typedef	struct s_timer {
+typedef	struct timer_s {
 	sfClock		*clock;
 	sfTime		time;
 	float		seconds;
-}	t_timer;
+} gametimer_t;
 
-void		unset_timer(t_timer *timer);
-void		get_elapsed_time(t_timer *timer);
-t_timer		*init_timer(void);
-
-
+void		unsegametimer_t(gametimer_t *timer);
+void		get_elapsed_time(gametimer_t *timer);
+gametimer_t		*inigametimer_t(void);
 
 #endif

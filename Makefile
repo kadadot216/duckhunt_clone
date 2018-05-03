@@ -23,8 +23,9 @@ GDBNAME	=	gdb
 
 SRC	=	src/window.c		\
 		src/timer.c		\
-		src/duck.c		\
 		src/gamewindow.c	\
+		src/duck/duck.c		\
+		src/duck/moves.c	\
 		src/game.c
 
 OBJ	=	$(SRC:.c=.o)
@@ -78,3 +79,5 @@ tclean:
 
 gclean:
 	rm -f $(GDBNAME)
+
+cclean: tclean gclean fclean libclean

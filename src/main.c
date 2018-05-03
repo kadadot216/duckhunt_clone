@@ -11,11 +11,17 @@
 #include "gamewindow.h"
 #include <SFML/Graphics.h>
 
+void	dispatch_events(window_t *window)
+{
+	duck_t	*duck = NULL;
+
+}
+
 int	main(void)
 {
-	t_window	*window;
-	t_duck		*duck;
-	t_bg		*bg;
+	window_t	*window;
+	duck_t		*duck;
+	bg_t		*bg;
 
 	window = create_window(800, 600, 32, "My window");
 	bg = set_bg();
@@ -23,12 +29,13 @@ int	main(void)
 	while (sfRenderWindow_isOpen(window->renderwindow)) {
 		sfRenderWindow_clear(window->renderwindow, sfBlack);
 		analyse_events(window->renderwindow, window->event);
-		sfRenderWindow_drawSprite(window->renderwindow, bg->sprite, NULL);
+		sfRenderWindow_drawSprite(window->renderwindow, bg->sprite,
+			NULL);
 		anim_duck(duck, window->renderwindow);
 		move_duck(duck, window);
 		sfRenderWindow_display(window->renderwindow);
 	}
-	kill_duck(duck);
+	remove_duck(duck);
 	unset_bg(bg);
 	if (!destroy_window(window))
 		return (84);

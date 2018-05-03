@@ -7,11 +7,11 @@
 
 #include "window.h"
 
-t_window	*create_window(unsigned int width, unsigned int height,
+window_t	*create_window(unsigned int width, unsigned int height,
 			unsigned int depth, char *title)
 {
-	t_window	*new;
-	new = malloc(sizeof(t_window));
+	window_t	*new;
+	new = malloc(sizeof(window_t));
 
 	new->title = my_strdup(title);
 	new->mode.width = width;
@@ -23,7 +23,7 @@ t_window	*create_window(unsigned int width, unsigned int height,
 	return (new);
 }
 
-int		destroy_window(t_window *win)
+int		destroy_window(window_t *win)
 {
 	sfRenderWindow_destroy(win->renderwindow);
 	if (win->renderwindow)

@@ -14,16 +14,17 @@
 
 #define BG_PATH "assets/background.png"
 
-typedef struct s_bg t_bg;
+typedef struct bg_s bg_t;
 
-struct s_bg {
+struct bg_s {
 	sfTexture	*texture;
 	sfSprite	*sprite;
 };
 
-t_bg	*set_bg(void);
-void	unset_bg(t_bg *bg);
-void	move_duck(t_duck *duck, t_window *window);
-void	run_game(t_window *window, t_timer *gametimer, t_duck *duck);
+bg_t	*set_bg(void);
+void			unset_bg(bg_t *bg);
+void			move_duck(duck_t *duck, window_t *window);
+void			run_game(window_t *window, gametimer_t *timer,
+	duck_t *duck);
 
 #endif
