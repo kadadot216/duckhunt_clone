@@ -18,8 +18,6 @@ int	main(void)
 	t_bg		*bg;
 
 	window = create_window(800, 600, 32, "My window");
-	if (!window)
-		return (84);
 	bg = set_bg();
 	duck = new_duck();
 	while (sfRenderWindow_isOpen(window->renderwindow)) {

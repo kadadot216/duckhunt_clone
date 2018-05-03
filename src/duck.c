@@ -62,4 +62,3 @@ void	anim_duck(t_duck *duck, sfRenderWindow *window)
 	sfSprite_setTextureRect(duck->sprite, duck->hitbox);
 	sfRenderWindow_drawSprite(window, duck->sprite, NULL);
 }
-

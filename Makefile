@@ -9,9 +9,9 @@ CC	=	gcc -W -Wall -Wextra
 
 GDBCC	=	gcc -g
 
-CFLAGS	+=	-I/usr/local/include -I./include
+CFLAGS	+=	-I./include
 
-LDFLAGS	=	-L/usr/local/lib -L./lib
+LDFLAGS	=	-L./lib
 
 LDLIBS	=	-lc_graph_prog -lmy
 
@@ -39,7 +39,7 @@ T_SRC	=	tests/$(T_NAME).c
 
 .PHONY: clean fclean tclean gclean lib libclean re
 
-all:	$(NAME)
+all:	lib $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $(MAIN) $(SRC) $(LDLIBS)
@@ -57,6 +57,14 @@ retest: tclean tests_run
 re: fclean all
 
 regdb: gclean gdb
+
+lib:
+	make -C ./lib/my
+	make -C ./lib/my clean
+
+libclean:
+	make -C ./lib/my fclean
+
 
 clean: tclean gclean
 	rm -f $(OBJ)

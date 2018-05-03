@@ -34,9 +34,6 @@ void	go_back(sfVector2f *speed)
 void	flip_sprite_h(sfSprite *sprite, int direction)
 {
 	sfVector2f	mirror_h = {direction, 1};
-	//sfVector2f	origin = {sfSprite_getLocalBounds(sprite).width, 0};
-
-	//sfSprite_setOrigin(sprite, origin);
 	sfSprite_setScale(sprite, mirror_h);
 }
 
