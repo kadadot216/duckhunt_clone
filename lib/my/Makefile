@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2018
-## Makefile
-## File description:
-## Makefile for mylib
-##
-
 SRC	=	str/my_strdup.c		\
 		put/my_putchar.c	\
 		put/my_putstr.c		\

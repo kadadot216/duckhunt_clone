@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** duck.c
-** File description:
-** Quacks
-*/
-
 #include "duck.h"
 #include "timer.h"
 #include "my.h"

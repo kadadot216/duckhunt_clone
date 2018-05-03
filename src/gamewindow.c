@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** gamewindow.c
-** File description:
-** C File for managing interactions between window and the game
-*/
-
 #include "gamewindow.h"
 
 void	manage_mouse_click(sfMouseButtonEvent event)

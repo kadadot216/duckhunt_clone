@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** main.c
-** File description:
-** Main file
-*/
-
 #include "window.h"
 #include "duck.h"
 #include "game.h"

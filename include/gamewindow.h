@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** gamewindow.h
-** File description:
-** Header file for gamewindow.c
-*/
-
 #ifndef __GAMEWINDOW_H__
 #define __GAMEWINDOW_H__
 

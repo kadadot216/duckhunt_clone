@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** duck.h
-** File description:
-** Header file that helps to quack
-*/
-
 #ifndef __DUCK_H__
 #define __DUCK_H__
 
@@ -12,16 +5,16 @@
 #include "timer.h"
 #include "my.h"
 
-#define	DUCK_HEIGHT (100)
-#define	DUCK_WIDTH (134)
-#define	DUCK_FRAMES (10)
-//#define	DUCK_HEIGHT (110)
-//#define	DUCK_WIDTH (110)
-//#define	DUCK_FRAMES (3)
+//#define	DUCK_HEIGHT (95)
+//#define	DUCK_WIDTH (60)
+//#define	DUCK_FRAMES (12)
+#define	DUCK_HEIGHT (110)
+#define	DUCK_WIDTH (110)
+#define	DUCK_FRAMES (3)
 #define SPRITE_LENGTH (DUCK_WIDTH * DUCK_FRAMES)
-#define	FRAME_DURATION (0.025)
+#define	FRAME_DURATION (0.25)
 
-#define PICPATH "assets/rareparrot.png"
+#define PICPATH "assets/spritesheet.png"
 
 struct s_duck {
 	sfSprite	*sprite;

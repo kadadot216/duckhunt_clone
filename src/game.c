@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** game.c
-** File description:
-** Game management
-*/
-
 #include "game.h"
 #include "duck.h"
 

@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** window.h
-** File description:
-** Header file for window.c
-*/
-
 #ifndef __WINDOW_H__
 #define __WINDOW_H__
 

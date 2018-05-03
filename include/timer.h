@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** timer.h
-** File description:
-** Header file for time.c
-*/
-
 #ifndef __TIMER_H__
 #define __TIMER_H__
 

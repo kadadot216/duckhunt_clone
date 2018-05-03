@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2018
-## Makefile
-## File description:
-## Makefile for myhunter
-##
-
 CC	=	gcc -W -Wall -Wextra
 
 GDBCC	=	gcc -g
