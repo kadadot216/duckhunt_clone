@@ -7,18 +7,12 @@
 
 #include "timer.h"
 
-gametimer_t		*inigametimer_t(void)
+gametimer_t		init_timer(void)
 {
-	gametimer_t		*timer;
+	gametimer_t		timer;
 
-	timer = malloc(sizeof(gametimer_t));
-	timer->clock = sfClock_create();
+	timer.clock = sfClock_create();
 	return (timer);
-}
-
-void		unsegametimer_t(gametimer_t *timer)
-{
-	free(timer);
 }
 
 void		get_elapsed_time(gametimer_t *timer)

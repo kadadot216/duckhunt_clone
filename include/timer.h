@@ -17,8 +17,7 @@ typedef	struct timer_s {
 	float		seconds;
 } gametimer_t;
 
-void		unsegametimer_t(gametimer_t *timer);
 void		get_elapsed_time(gametimer_t *timer);
-gametimer_t		*inigametimer_t(void);
+gametimer_t	init_timer(void);
 
 #endif

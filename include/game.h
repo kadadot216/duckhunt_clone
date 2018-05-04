@@ -21,10 +21,10 @@ struct bg_s {
 	sfSprite	*sprite;
 };
 
-bg_t	*set_bg(void);
-void			unset_bg(bg_t *bg);
-void			move_duck(duck_t *duck, window_t *window);
-void			run_game(window_t *window, gametimer_t *timer,
+bg_t	set_bg(void);
+void	unset_bg(bg_t *bg);
+void	move_duck(duck_t *duck, window_t *window);
+void	run_game(window_t *window, gametimer_t *timer,
 	duck_t *duck);
 
 #endif

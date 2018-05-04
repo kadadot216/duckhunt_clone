@@ -14,14 +14,14 @@
 struct	window_s {
 	char		*title;
 	sfVideoMode	mode;
-	sfRenderWindow	*renderwindow;
+	sfRenderWindow	*render;
 	sfEvent		event;
 };
 
 typedef struct	window_s window_t;
 
 int		destroy_window(window_t *win);
-window_t	*create_window(unsigned int height, unsigned int width,
+window_t	create_window(unsigned int height, unsigned int width,
 			unsigned int colordepth, char *title);
 
 #endif
