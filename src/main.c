@@ -24,14 +24,8 @@ int	main(void)
 
 	duck.status = VISIBLE;
 	while (sfRenderWindow_isOpen(window.render) && player.lives) {
-		my_put_nbr(player.lives);
-		my_putchar('\n');
 		poll_events(&window, &player, &duck);
-		sfRenderWindow_clear(window.render, sfBlack);
-		sfRenderWindow_drawSprite(window.render, window.bg.sprite,
-			NULL);
 		dispatch_events(&window, &duck, &player);
-		sfRenderWindow_display(window.render);
 	}
 	remove_duck(&duck);
 	unset_bg(&window.bg);

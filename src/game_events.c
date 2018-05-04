@@ -35,14 +35,50 @@ int	is_within(int x, int after, int before)
 		return (0);
 }
 
-void	shoot_duck(player_t *player, sfVector2f *duck)
+int	is_within_duck(mousescope_t *scope, sfVector2f *duckpos)
 {
-	if (is_within(player->scope.x, duck->x, DUCK_WIDTH) &&
-		is_within(player->scope.y, duck->y, DUCK_HEIGHT)) {
-			my_putstr("PAN\n");
+	if (is_within(scope->x, duckpos->x, DUCK_WIDTH) && 
+	(is_within(scope->y, duckpos->y, DUCK_HEIGHT)))
+		return (1);
+	else
+		return (0);
+}
+
+void	score_points(int *score)
+{
+	*score += 100;
+}
+
+void	term_score(int score)
+{
+	my_putstr("SCORE: ");
+	my_put_nbr(score);
+	my_putchar('\n');
+}
+
+void	term_lives_left(int lives)
+{
+	if (lives == 0) {
+		my_putstr("You died hunted by the duck.");
+	} else {
+		my_putstr("Oops! ");
+		my_put_nbr(lives);
+		my_putstr((lives == 1) ? " life" : " lives");
+		my_putstr(" left! ");
 	}
-	else if (player->scope.x != OOR && player->scope.y != OOR)
+	my_putchar('\n');
+}
+
+void	shoot_duck(player_t *player, duck_t *duck)
+{
+	if (is_within_duck(&player->scope, &duck->position)) {
+		score_points(&player->score);
+		term_score(player->score);
+	}
+	else if (player->scope.x != OOR && player->scope.y != OOR) {
 		player->lives--;
+		term_lives_left(player->lives);
+	}
 	player->scope.x = OOR;
 	player->scope.y = OOR;
 
@@ -50,15 +86,18 @@ void	shoot_duck(player_t *player, sfVector2f *duck)
 
 void	dispatch_player_action(player_t *player, duck_t *duck)
 {
-	shoot_duck(player, &duck->position);
+	shoot_duck(player, duck);
 }
 
 void	dispatch_events(window_t *window, duck_t *duck, player_t *player)
 {
+	sfRenderWindow_clear(window->render, sfBlack);
+	sfRenderWindow_drawSprite(window->render, window->bg.sprite, NULL);
 	if (duck->status == VISIBLE) {
 		dispatch_player_action(player, duck);
 		anim_duck(duck, window->render);
 		move_duck(duck, window);
 	}
+	sfRenderWindow_display(window->render);
 }
 
