@@ -1,21 +1,19 @@
 /*
 ** EPITECH PROJECT, 2018
-** gamewindow.h
+** game_events.h
 ** File description:
-** Header file for gamewindow.c
+** Header file for game_events.c
 */
 
-#ifndef __GAMEWINDOW_H__
-#define __GAMEWINDOW_H__
+#ifndef __GAME_EVENT_H__
+#define __GAME_EVENT_H__
 
-#include <SFML/Graphics.h>
-#include "my.h"
 #include "player.h"
+#include "game.h"
 #include "window.h"
-#include "duck.h"
 
 void	manage_mouse_click(sfMouseButtonEvent event, player_t *player);
-void	close_window(sfRenderWindow *window);
 void	poll_events(window_t *window, player_t *player, duck_t *duck);
+void	dispatch_events(window_t *window, duck_t *duck, player_t *player);
 
 #endif

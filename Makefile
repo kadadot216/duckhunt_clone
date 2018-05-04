@@ -17,16 +17,16 @@ LDLIBS	=	-lc_graph_prog -lmy
 
 TFLAGS	=	--coverage -lcriterion
 
-NAME	=	window
+NAME	=	my_hunter
 
 GDBNAME	=	gdb
 
 SRC	=	src/window.c		\
 		src/timer.c		\
-		src/gamewindow.c	\
+		src/game_events.c	\
 		src/duck/duck.c		\
 		src/duck/moves.c	\
-		src/game.c
+		src/player.c
 
 OBJ	=	$(SRC:.c=.o)
 
