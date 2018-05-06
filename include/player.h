@@ -21,9 +21,12 @@ typedef struct mousescope_s {
 typedef struct player_s {
 	int		lives;
 	int		score;
+	sfSprite	*life_sprite;
+	sfTexture	*life_text;
 	mousescope_t	scope;
 } player_t;
 
 mousescope_t	player_shoot(int x, int y);
+player_t	setup_player(void);
 
 #endif

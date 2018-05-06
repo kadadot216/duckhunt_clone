@@ -18,6 +18,20 @@ int	within_range_of_duck(int x, int y, sfVector2f pos)
 		return (0);
 }
 
+player_t	setup_player(void)
+{
+	player_t	player;
+
+	player.lives = 3;
+	player.score = 0;
+	player.scope.x = OOR;
+	player.scope.y = OOR;
+	player.life_sprite = sfSprite_create();
+	player.life_text = sfTexture_createFromFile("./assets/life.png", NULL);
+	sfSprite_setTexture(player.life_sprite, player.life_text, sfFalse);
+	return (player);
+}
+
 mousescope_t	player_shoot(int x, int y)
 {
 	mousescope_t	pos = {x, y};
