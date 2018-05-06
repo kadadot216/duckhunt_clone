@@ -14,6 +14,6 @@
 
 void	move_duck(duck_t *duck, window_t *window);
 void	run_game(window_t *window, gametimer_t *timer,
-	duck_t *duck);
+duck_t *duck);
 
 #endif

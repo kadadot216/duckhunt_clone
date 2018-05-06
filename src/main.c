@@ -8,7 +8,8 @@
 #include "game.h"
 #include "my.h"
 #include "gameobjects.h"
-#include "game_events.h"
+#include "event_dispatcher.h"
+#include "event_poll.h"
 #include <SFML/Graphics.h>
 
 
@@ -21,8 +22,6 @@ sfText	*setup_score(sfVideoMode *mode)
 	sfText_setFont(score, font);
 	sfText_setCharacterSize(score, 30);
 	sfText_setColor(score, sfWhite);
-	//sfText_setOutlineColor(score, sfBlack);
-	//sfText_setOutlineThickness(score, 0.3);
 	position.x = -700;
 	position.y = -500;
 	sfText_setOrigin(score, position);

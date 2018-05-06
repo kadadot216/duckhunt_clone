@@ -28,5 +28,6 @@ typedef struct player_s {
 
 mousescope_t	player_shoot(int x, int y);
 player_t	setup_player(void);
+void	score_points(int *score);
 
 #endif

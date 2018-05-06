@@ -8,7 +8,7 @@
 #include "window.h"
 
 window_t	create_window(unsigned int width, unsigned int height,
-			unsigned int depth, char *title)
+unsigned int depth, char *title)
 {
 	window_t	new;
 
@@ -17,7 +17,7 @@ window_t	create_window(unsigned int width, unsigned int height,
 	new.mode.height = height;
 	new.mode.bitsPerPixel = depth;
 	new.render = sfRenderWindow_create(new.mode, new.title,
-			sfResize | sfClose, NULL);
+	sfResize | sfClose, NULL);
 	new.bg = set_bg();
 	sfRenderWindow_setFramerateLimit(new.render, 60);
 	return (new);

@@ -1,17 +1,18 @@
 /*
 ** EPITECH PROJECT, 2018
-** game_events.h
+** event_dispatcher.h
 ** File description:
-** Header file for game_events.c
+** Header file for event_dispatcher.c
 */
 
-#ifndef __GAME_EVENT_H__
-#define __GAME_EVENT_H__
+#ifndef __EVENT_DISPATCHER_H__
+#define __EVENT_DISPATCHER_H__
 
 #include "gameobjects.h"
 
 void	manage_mouse_click(sfMouseButtonEvent event, player_t *player);
 void	poll_events(window_t *window, player_t *player, duck_t *duck);
-void	dispatch_events(window_t *window, duck_t *duck, player_t *player, sfText *score);
+void	dispatch_events(window_t *window, duck_t *duck, player_t *player,
+sfText *score);
 
 #endif

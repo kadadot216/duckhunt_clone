@@ -26,7 +26,7 @@ struct duck_s {
 	enum status_e {
 		VISIBLE,
 		HIDDEN
-	}		status;
+	} status;
 	sfSprite	*sprite;
 	sfTexture	*texture;	
 	sfIntRect	hitbox;
@@ -46,5 +46,7 @@ void		move_duck(duck_t *duck, window_t *window);
 duck_t		setup_duck(void);
 void	enable_duck(duck_t *duck, player_t *player);
 void	disable_duck(duck_t *duck);
+int	is_within(int x, int after, int before);
+int	is_within_duck(mousescope_t *scope, sfVector2f *duckpos);
 
 #endif

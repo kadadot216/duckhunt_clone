@@ -30,10 +30,13 @@ LIB	=	src/lib/my_compute_power_rec.c	\
 
 SRC	=	src/window.c		\
 		src/timer.c		\
-		src/game_events.c	\
+		src/event_dispatcher.c	\
+		src/event_poll.c	\
 		src/term.c		\
 		src/duck/duck.c		\
 		src/duck/moves.c	\
+		src/duck/anim.c		\
+		src/duck/spot.c		\
 		src/player.c
 
 MAIN	=	src/main.c

@@ -29,7 +29,7 @@ typedef struct	window_s {
 
 int		destroy_window(window_t *win);
 window_t	create_window(unsigned int height, unsigned int width,
-			unsigned int colordepth, char *title);
+unsigned int colordepth, char *title);
 bg_t	set_bg(void);
 void	unset_bg(bg_t *bg);
 void	close_window(sfRenderWindow *window);
