@@ -5,10 +5,10 @@
 ** Game events file
 */
 
+#include "my.h"
 #include "player.h"
 #include "duck.h"
 #include "window.h"
-#include "gamewindow.h"
 
 void	manage_mouse_click(sfMouseButtonEvent event, player_t *player)
 {
@@ -69,11 +69,13 @@ void	term_lives_left(int lives)
 	my_putchar('\n');
 }
 
+
 void	shoot_duck(player_t *player, duck_t *duck)
 {
 	if (is_within_duck(&player->scope, &duck->position)) {
 		score_points(&player->score);
 		term_score(player->score);
+		disable_duck(duck);
 	}
 	else if (player->scope.x != OOR && player->scope.y != OOR) {
 		player->lives--;
@@ -89,15 +91,27 @@ void	dispatch_player_action(player_t *player, duck_t *duck)
 	shoot_duck(player, duck);
 }
 
-void	dispatch_events(window_t *window, duck_t *duck, player_t *player)
+void	display_score(player_t *player, sfText *score)
+{
+	char	*text = my_getbase_nbr(player->score, "0123456789");
+	sfText_setString(score, text);
+}
+
+void	dispatch_events(window_t *window, duck_t *duck, player_t *player, sfText *score)
 {
 	sfRenderWindow_clear(window->render, sfBlack);
 	sfRenderWindow_drawSprite(window->render, window->bg.sprite, NULL);
+	get_elapsed_time(&duck->spawntimer);
+	if (duck->status == HIDDEN && duck->spawntimer.seconds > 3) {
+		enable_duck(duck, player);
+	}
 	if (duck->status == VISIBLE) {
 		dispatch_player_action(player, duck);
 		anim_duck(duck, window->render);
 		move_duck(duck, window);
 	}
+	display_score(player, score);
+	sfRenderWindow_drawText(window->render, score, NULL);
 	sfRenderWindow_display(window->render);
 }
 

@@ -8,8 +8,7 @@
 #ifndef __GAME_H__
 #define __GAME_H__
 
-#include "duck.h"
-#include "window.h"
+#include "gameobjects.h"
 #include <SFML/Graphics.h>
 
 

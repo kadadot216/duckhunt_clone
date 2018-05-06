@@ -37,6 +37,11 @@ int		destroy_window(window_t *win)
 	return (0);
 }
 
+void	close_window(sfRenderWindow *window)
+{
+	sfRenderWindow_close(window);
+}
+
 bg_t	set_bg(void)
 {
 	bg_t	bg;

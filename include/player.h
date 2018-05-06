@@ -11,7 +11,6 @@
 #define LIVES (3)
 #define OOR (-1)
 
-#include "duck.h"
 #include <SFML/Graphics.h>
 
 typedef struct mousescope_s {
