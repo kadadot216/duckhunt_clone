@@ -38,7 +38,8 @@ sfText	*unset_score(sfText *text)
 
 int	main(void)
 {
-	window_t	window = create_window(800, 600, 32, "H U C K D U N T");
+	window_t	window = create_window(800, 600,
+	32, "H U C K D U N T");
 	player_t	player = setup_player();
 	sfText		*score = setup_score(&window.mode);
 	duck_t		duck = setup_duck();

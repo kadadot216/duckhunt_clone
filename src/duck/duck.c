@@ -17,6 +17,7 @@ duck_t	setup_duck(void)
 	duck.hitbox.width = DUCK_WIDTH;
 	duck.hitbox.height = DUCK_HEIGHT;
 	duck.status = HIDDEN;
+	duck.direction = RIGHT;
 	duck.texture = sfTexture_createFromFile(PICPATH, NULL);
 	duck.sprite = sfSprite_create();
 	duck.timer = init_timer();
@@ -35,6 +36,7 @@ void	enable_duck(duck_t *duck, player_t *player)
 		duck->status = VISIBLE;
 	sfSprite_setPosition(duck->sprite, pos);
 	duck->status = VISIBLE;
+	duck->direction = RIGHT;
 	duck->hitbox.width = DUCK_WIDTH;
 	duck->hitbox.height = DUCK_HEIGHT;
 	duck->speed.x = 4.8 + ((double) player->score / 100.0);

@@ -27,6 +27,10 @@ struct duck_s {
 		VISIBLE,
 		HIDDEN
 	} status;
+	enum direction_e {
+		LEFT = 1,
+		RIGHT = -1
+	} direction;
 	sfSprite	*sprite;
 	sfTexture	*texture;	
 	sfIntRect	hitbox;
@@ -39,7 +43,7 @@ struct duck_s {
 typedef struct duck_s	duck_t;
 
 int		remove_duck(duck_t *duck);
-void		move_rect(sfIntRect *rect, int offset, int max_value);
+void		move_rect(duck_t *duck, int offset, int max_value);
 void		anim_duck(duck_t *duck, sfRenderWindow *window);
 sfVector2f	get_sp_position(sfSprite *sprite);
 void		move_duck(duck_t *duck, window_t *window);
