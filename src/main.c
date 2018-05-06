@@ -15,7 +15,7 @@
 #include <time.h>
 
 
-sfText	*setup_score(sfVideoMode *mode)
+sfText	*setup_score(void)
 {
 	sfText	*score = sfText_create();
 	sfFont	*font = sfFont_createFromFile("./assets/IBM_VGA8.ttf");
@@ -43,13 +43,13 @@ int	main(void)
 	window_t	window = create_window(800, 600,
 	32, "H U C K D U N T");
 	player_t	player = setup_player();
-	sfText		*score = setup_score(&window.mode);
+	sfText		*score = setup_score();
 	duck_t		duck = setup_duck();
 
 	srand((unsigned)time(NULL));
 	enable_duck(&duck, &player);
 	while (sfRenderWindow_isOpen(window.render) && player.lives) {
-		poll_events(&window, &player, &duck);
+		poll_events(&window, &player);
 		dispatch_events(&window, &duck, &player, score);
 	}
 	remove_duck(&duck);

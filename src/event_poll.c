@@ -18,7 +18,7 @@ void	manage_mouse_click(sfMouseButtonEvent event, player_t *player)
 	}
 }
 
-void	poll_events(window_t *window, player_t *player, duck_t *duck)
+void	poll_events(window_t *window, player_t *player)
 {
 	while (sfRenderWindow_pollEvent(window->render, &window->event)) {
 		if (window->event.type == sfEvtClosed)
