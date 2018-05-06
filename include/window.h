@@ -9,6 +9,7 @@
 #define __WINDOW_H__
 
 #include <SFML/Graphics.h>
+#include <SFML/Graphics/RenderWindow.h>
 #include "my.h"
 
 #define BG_PATH "assets/background.png"

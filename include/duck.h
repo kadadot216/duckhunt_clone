@@ -52,5 +52,6 @@ void	enable_duck(duck_t *duck, player_t *player);
 void	disable_duck(duck_t *duck);
 int	is_within(int x, int after, int before);
 int	is_within_duck(mousescope_t *scope, sfVector2f *duckpos);
+void	spawn_duck(int limit);
 
 #endif

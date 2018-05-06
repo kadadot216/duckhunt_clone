@@ -11,6 +11,8 @@
 #include "event_dispatcher.h"
 #include "event_poll.h"
 #include <SFML/Graphics.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 sfText	*setup_score(sfVideoMode *mode)
@@ -44,6 +46,7 @@ int	main(void)
 	sfText		*score = setup_score(&window.mode);
 	duck_t		duck = setup_duck();
 
+	srand((unsigned)time(NULL));
 	enable_duck(&duck, &player);
 	while (sfRenderWindow_isOpen(window.render) && player.lives) {
 		poll_events(&window, &player, &duck);

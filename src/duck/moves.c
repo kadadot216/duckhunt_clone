@@ -37,7 +37,9 @@ void	move_duck(duck_t *duck, window_t *window)
 		go_back(&duck->speed);
 		flip_sprite_h(duck);
 	}
-	if  (duck->position.y == maxheight)
+	if  (duck->position.y > maxheight)
+		duck->speed.y = (- duck->speed.y);
+	if  (duck->position.y < 0)
 		duck->speed.y = (- duck->speed.y);
 	sfSprite_move(duck->sprite, duck->speed);
 }

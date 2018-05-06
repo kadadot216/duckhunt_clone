@@ -7,6 +7,7 @@
 
 #include "my.h"
 #include "gameobjects.h"
+#include "random.h"
 
 duck_t	setup_duck(void)
 {
@@ -30,17 +31,17 @@ duck_t	setup_duck(void)
 
 void	enable_duck(duck_t *duck, player_t *player)
 {
-	sfVector2f	pos = {0, 0};
-
 	if (duck->status == HIDDEN)
 		duck->status = VISIBLE;
-	sfSprite_setPosition(duck->sprite, pos);
+	duck->position.x = spawn_rand(800 - DUCK_HEIGHT);
+	duck->position.y = spawn_choice(0, 600 - DUCK_WIDTH);
+	sfSprite_setPosition(duck->sprite, duck->position);
 	duck->status = VISIBLE;
 	duck->direction = RIGHT;
 	duck->hitbox.width = DUCK_WIDTH;
 	duck->hitbox.height = DUCK_HEIGHT;
 	duck->speed.x = 4.8 + ((double) player->score / 100.0);
-	duck->speed.y = 0;
+	duck->speed.y = rand_y(-6.0, 6.0);
 	player->scope.x = OOR;
 	player->scope.y = OOR;
 }

@@ -9,6 +9,7 @@
 #include "player.h"
 #include "duck.h"
 #include "window.h"
+#include "random.h"
 #include "term.h"
 
 void	shoot_duck(player_t *player, duck_t *duck)

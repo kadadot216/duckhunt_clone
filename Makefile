@@ -33,6 +33,7 @@ SRC	=	src/window.c		\
 		src/event_dispatcher.c	\
 		src/event_poll.c	\
 		src/term.c		\
+		src/duck/random.c	\
 		src/duck/duck.c		\
 		src/duck/moves.c	\
 		src/duck/anim.c		\
