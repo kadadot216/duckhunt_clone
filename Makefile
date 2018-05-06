@@ -11,15 +11,22 @@ GDBCC	=	gcc -g
 
 CFLAGS	+=	-I./include
 
-LDFLAGS	=	-L./lib
-
-LDLIBS	=	-lc_graph_prog -lmy
+LDLIBS	=	-lc_graph_prog
 
 TFLAGS	=	--coverage -lcriterion
 
 NAME	=	my_hunter
 
 GDBNAME	=	gdb
+
+LIB	=	src/lib/my_compute_power_rec.c	\
+		src/lib/my_getbase_nbr.c	\
+		src/lib/my_putchar.c		\
+		src/lib/my_puterror.c		\
+		src/lib/my_put_nbr.c		\
+		src/lib/my_putstr.c		\
+		src/lib/my_strdup.c		\
+		src/lib/my_strlen.c
 
 SRC	=	src/window.c		\
 		src/timer.c		\
@@ -29,9 +36,11 @@ SRC	=	src/window.c		\
 		src/duck/moves.c	\
 		src/player.c
 
-OBJ	=	$(SRC:.c=.o)
-
 MAIN	=	src/main.c
+
+OBJ	=	$(LIB:.c=.o)
+OBJ	+=	$(SRC:.c=.o)
+OBJ	+=	$(MAIN:.c=.o)
 
 T_NAME	=	unit_tests
 
@@ -44,41 +53,23 @@ T_SRC	=	tests/$(T_NAME).c
 all:	lib $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $(MAIN) $(SRC) $(LDLIBS)
-
-tests_run:
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(T_NAME) $(T_SRC) $(SRC)	\
-						$(LDLIBS) $(TFLAGS)
-	./$(T_NAME)
+	$(CC) $(CFLAGS) -o $(NAME) $^ $(LDLIBS)
 
 gdb:
-	$(GDBCC) $(CFLAGS) $(LDFLAGS) -o $(GDBNAME) $(MAIN) $(SRC) $(LDLIBS)
-
-retest: tclean tests_run
+	$(GDBCC) $(CFLAGS) $(LDFLAGS) -o $(GDBNAME) $(LIB) $(MAIN) $(SRC) \
+		$(LDLIBS)
 
 re: fclean all
 
 regdb: gclean gdb
 
-lib:
-	make -C ./lib/my
-	make -C ./lib/my clean
-
-libclean:
-	make -C ./lib/my fclean
-
-
 clean: tclean gclean
-	rm -f $(OBJ)
-
-fclean:	clean libclean
 	rm -f $(NAME)
 
-tclean:
-	rm -f $(T_NAME)
-	rm -f *.gc*
+fclean:	clean libclean
+	rm -f $(OBJ)
 
 gclean:
 	rm -f $(GDBNAME)
 
-cclean: tclean gclean fclean libclean
+cclean: gclean fclean libclean
