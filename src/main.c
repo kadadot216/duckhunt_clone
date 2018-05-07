@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** main.c
-** File description:
-** Main file
-*/
-
 #include "game.h"
 #include "my.h"
 #include "gameobjects.h"
@@ -41,7 +34,7 @@ sfText	*unset_score(sfText *text)
 int	main(void)
 {
 	window_t	window = create_window(800, 600,
-	32, "H U C K D U N T");
+	32, "My Hunter");
 	player_t	player = setup_player();
 	sfText		*score = setup_score();
 	duck_t		duck = setup_duck();

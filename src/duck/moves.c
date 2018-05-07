@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** moves.c
-** File description:
-** Moves file for duck class
-*/
-
 #include "window.h"
 #include "duck.h"
 

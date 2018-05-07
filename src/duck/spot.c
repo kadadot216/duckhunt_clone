@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** spot.c
-** File description:
-** Functions between duck and player scope
-*/
-
 #include "player.h"
 #include "duck.h"
 

@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** timer.c
-** File description:
-** Set Timer structure
-*/
-
 #include "timer.h"
 
 gametimer_t		init_timer(void)

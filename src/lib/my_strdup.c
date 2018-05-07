@@ -1,10 +1,4 @@
-/*
-** EPITECH PROJECT, 2018
-** my_strdup.c
-** File description:
-** Allocates memory and copies the string given as argument in it
-*/
-#include "my.h"
+#include <stdlib.h>
 
 char	*my_strdup(char const *src)
 {

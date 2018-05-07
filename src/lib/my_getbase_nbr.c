@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** my_getbase_nbr.c
-** File description:
-** Converts a decimal int into its base representation
-*/
-
 #include "my.h"
 
 char	*my_getbase_nbr(int nb, char const *base_to)

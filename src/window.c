@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** window.c
-** File description:
-** File for window
-*/
-
 #include "window.h"
 
 window_t	create_window(unsigned int width, unsigned int height,

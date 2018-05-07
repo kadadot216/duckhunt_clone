@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** window.h
-** File description:
-** Header file for window.c
-*/
-
 #ifndef __WINDOW_H__
 #define __WINDOW_H__
 
@@ -26,7 +19,6 @@ typedef struct	window_s {
 	sfEvent		event;
 	bg_t		bg;
 } window_t;
-
 
 int		destroy_window(window_t *win);
 window_t	create_window(unsigned int height, unsigned int width,

@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** event_poll.h
-** File description:
-** Header file for event_poll.c
-*/
-
 #ifndef __EVENT_POLL_H__
 #define __EVENT_POLL_H__
 

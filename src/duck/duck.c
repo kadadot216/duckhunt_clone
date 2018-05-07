@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** duck.c
-** File description:
-** Quacks
-*/
-
 #include "my.h"
 #include "gameobjects.h"
 #include "random.h"
@@ -35,6 +28,7 @@ void	enable_duck(duck_t *duck, player_t *player)
 		duck->status = VISIBLE;
 	duck->position.x = spawn_rand(800 - DUCK_HEIGHT);
 	duck->position.y = spawn_choice(0, 600 - DUCK_WIDTH);
+	duck->anim_speed = (FRAME_DURATION - speed_variation());
 	sfSprite_setPosition(duck->sprite, duck->position);
 	duck->status = VISIBLE;
 	duck->direction = RIGHT;

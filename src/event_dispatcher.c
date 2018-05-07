@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** event_dispatcher.c
-** File description:
-** Dispatch events from player input
-*/
-
 #include "my.h"
 #include "player.h"
 #include "duck.h"
@@ -43,7 +36,8 @@ void	display_score(player_t *player, sfText *score, sfRenderWindow *window)
 void	display_lives(int lives, sfSprite *life_sprite, sfRenderWindow *window)
 {
 	int	i = 0;
-	sfVector2f	pos = {760, 560};
+    int offset_x = ((36 * (lives - 1)) + 18);
+	sfVector2f	pos = {offset_x, 18};
 
 	while (i < lives) {
 		sfSprite_setPosition(life_sprite, pos);

@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** anim.c
-** File description:
-** Animation functions for duck
-*/
-
 #include "duck.h"
 
 sfVector2f	get_sp_position(sfSprite *sprite)
@@ -28,7 +21,7 @@ void	move_rect(duck_t *duck, int offset, int max_value)
 void	anim_duck(duck_t *duck, sfRenderWindow *window)
 {
 	get_elapsed_time(&duck->timer);
-	if (duck->timer.seconds > FRAME_DURATION) {
+	if (duck->timer.seconds > duck->anim_speed) {
 		if (duck->direction == RIGHT)
 			move_rect(duck, DUCK_WIDTH, SPRITE_LENGTH);
 		else

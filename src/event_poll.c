@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** event_polling.c
-** File description:
-** Functions taken by polling events
-*/
-
 #include "my.h"
 #include "player.h"
 #include "duck.h"

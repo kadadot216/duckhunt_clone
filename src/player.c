@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** player.c
-** File description:
-** Player interactions function
-*/
-
 #include "player.h"
 #include "duck.h"
 #include "my.h"
@@ -22,7 +15,7 @@ player_t	setup_player(void)
 {
 	player_t	player;
 
-	player.lives = 3;
+	player.lives = 5;
 	player.score = 0;
 	player.scope.x = OOR;
 	player.scope.y = OOR;
@@ -43,3 +36,4 @@ void	score_points(int *score)
 {
 	*score += 100;
 }
+

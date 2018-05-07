@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2018
-## Makefile
-## File description:
-## Makefile for myhunter
-##
-
 CC	=	gcc -W -Wall -Wextra
 
 GDBCC	=	gcc -g
@@ -15,7 +8,7 @@ LDLIBS	=	-lc_graph_prog
 
 TFLAGS	=	--coverage -lcriterion
 
-NAME	=	my_hunter
+NAME	=	hunter
 
 GDBNAME	=	gdb
 

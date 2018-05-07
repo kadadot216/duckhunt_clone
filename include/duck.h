@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** duck.h
-** File description:
-** Header file that helps to quack
-*/
-
 #ifndef __DUCK_H__
 #define __DUCK_H__
 
@@ -14,13 +7,13 @@
 #include "timer.h"
 #include "window.h"
 
-#define	DUCK_HEIGHT (110)
-#define	DUCK_WIDTH (110)
-#define	DUCK_FRAMES (3)
+#define	DUCK_HEIGHT (100)
+#define	DUCK_WIDTH (135)
+#define	DUCK_FRAMES (10)
 #define SPRITE_LENGTH (DUCK_WIDTH * DUCK_FRAMES)
-#define	FRAME_DURATION (0.05)
+#define	FRAME_DURATION (0.015)
 
-#define PICPATH "assets/spritesheet.png"
+#define PICPATH "assets/rareparrot.png"
 
 struct duck_s {
 	enum status_e {
@@ -31,6 +24,7 @@ struct duck_s {
 		LEFT = 1,
 		RIGHT = -1
 	} direction;
+	double		anim_speed;
 	sfSprite	*sprite;
 	sfTexture	*texture;	
 	sfIntRect	hitbox;
@@ -52,6 +46,5 @@ void	enable_duck(duck_t *duck, player_t *player);
 void	disable_duck(duck_t *duck);
 int	is_within(int x, int after, int before);
 int	is_within_duck(mousescope_t *scope, sfVector2f *duckpos);
-void	spawn_duck(int limit);
 
 #endif
